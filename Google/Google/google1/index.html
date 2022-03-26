@@ -142,7 +142,27 @@
                 console.log(NameStr);
             }
         }
+        //  include method
+        const myFuntion = () => {
+            var input = document.getElementsByClassName("Search")[1];
+            var filter = input.value.toLowerCase().trim();
+            var nodes = document.getElementsByClassName('content');
+
+            for (i = 0; i < nodes.length; i++) {
+                console.log(nodes[i].innerText);
+                console.log(filter);
+
+                console.log( nodes[i].innerText.toLowerCase().includes(filter));
+
+                if (nodes[i].innerText.toLowerCase().includes(filter)) {
+                nodes[i].style.display = "";
+                } else {
+                nodes[i].style.display = "none";
+                }
+            }
+        }
     </script>
+    
 </body>
 
 </html>
