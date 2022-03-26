@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <i></i>
+            <img src="./img/Nutz Logo-01.svg" width="100px" height="100px" alt="" style="margin-left: 10%;">
+            <b>User</b>
+        </div>
+        <div class="search">
+            <input type="text" name="Search" value="" id="Search-id1"  onkeyup=" myFuntion1()" >
+            <i class="fa fa-search"></i>
+        </div>
+    </header>
+    <nav>
+        <img src="./img/Nutz Logo-01.svg" width="100px" height="100px" alt="" style="margin: 0% 5%;">
+        <div class="search">
+            <input type="text" name="Search" value="" id="Search-id">
+            <i class="fa fa-search"></i>
+        </div>
+        <b style="margin: 0% 5%;">User</b>
+    </nav>
+    <div class="container">
+    </div>
+    <script>
+        const data = [
+            {
+                Link: 'https://ranjithkumar.com', Name: 'cow', des: `Lorem Ipsum is simply dummy text
+                of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                Ipsum.`},
+            {
+                Link: 'https://ranjithkumar.com',
+                Name: 'cat',
+                des: `Lorem Ipsum is simply dummy text
+                of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                Ipsum.`},
+            {
+                Link: 'https://ranjithkumar.com',
+                Name: 'dog',
+                des: `Lorem Ipsum is simply dummy text
+                of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                Ipsum.`},
+            {
+                Link: 'https://ranjithkumar.com',
+                Name: 'google',
+                des: `Lorem Ipsum is simply dummy text
+                of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                Ipsum.`},
+        ];
+
+
+
+        // const content = document.getElementsByClassName('content ');
+        // const link = document.getElementsByClassName('a');
+        // const Name = document.getElementsByClassName('Name');
+        // const small = document.getElementsByClassName('small')
+        // for (i = 0; i < content.length; i++) {
+        //     link[i].childNodes.innerText = value.Link;
+        //     console.log(link[i].childNodes);
+        //     Name[i].innerText = value.Name;
+        //     small[i].innerText = value.des;
+        // }
+        const content = document.getElementsByClassName('container');
+        const Input = document.getElementById('Search-id');
+        const inputValue = Input.value.toUpperCase().trim()
+
+
+        var content1 = ''
+        for (let i = 0; i < content.length; i++) {
+            data.map(value => {
+                // console.log(value.Link);
+                content1 += `<div class='content'> <a  href="#" style="color:rgb(82, 82, 82); font-size: 13px;" class='a'>${value.Link}</a> <b class='Name' style="color:black;font-size: 20px; ">${value.Name}</b> <small style="color: rgb(82, 82, 82);text-align: justify;">${value.des}</small></div> `;
+                const Input = document.getElementById('Search-id');
+                content[i].innerHTML = content1
+            })
+        }
+
+
+
+        const myFuntion = () => {
+            const Input = document.getElementById('Search-id');
+            const inputValue = Input.value.toUpperCase().trim()
+            const Name = document.getElementsByClassName('content')
+
+            let NameStr;
+            let Index;
+            for (let i = 0; i < Name.length; i++) {
+
+                user = data[i].Name.toUpperCase()
+                Index = user.indexOf(inputValue)
+                if (Index != -1) {
+                    // console.log("testing");
+                    Name[i].style.display = ''
+                     
+                }
+                else {
+                    Name[i].style.display = 'none' 
+                }
+            }
+        }
+
+       function myFuntion1(){
+            const Input = document.getElementById('Search-id1');
+            const inputValue = Input.value.toUpperCase().trim()
+            const Name = document.getElementsByClassName('content')
+
+            let NameStr;
+            let Index;
+            for (let i = 0; i < Name.length; i++) {
+
+                user = data[i].Name.toUpperCase()
+                Index = user.indexOf(inputValue)
+                if (Index != -1) {
+                    // console.log("testing");
+                    Name[i].style.display = ''
+                     
+                }
+                else {
+                    Name[i].style.display = 'none' 
+                }
+            }
+        }
+
+
+        Input.addEventListener('keyup', myFuntion)
+        
+
+                // const myFuntion = (data) => {
+                //     const nameValue = data.Name
+                //     const Input = document.getElementById('Search-id');
+                //     const inputValue = Input.value.toUpperCase().trim()
+                //     const Name = document.getElementsByClassName('Name')
+                //     let NameStr;
+                //     let Index;
+                //     for (let i = 0; i < Name.length; i++) {
+                //         nameValue = nameValue.toUpperCase();
+                //         NameStr = nameValue.filter(user => {
+                //             user = user.toUpperCase()
+                //             Index = user.indexOf(inputValue)
+                //         })
+                //         if (Index > -1) {
+                //             Name[i].parentNode.style.display = 'block'
+                //         }
+                //         else {
+                //             Name[i].parentNode.style.display = 'none'
+                //         }
+                //         console.log(NameStr);
+                //     }
+                // }
+
+
+
+                // const myFuntion1 = () => {
+                //     const Input = document.getElementById('Search-id1');
+                //     const inputValue = Input.value.toUpperCase().trim()
+                //     const Name = document.getElementsByClassName('Name')
+                //     let NameValue = [];
+                //     let NameStr;
+                //     let Index;
+                //     for (let i = 0; i < Name.length; i++) {
+                //         NameValue.push(Name[i].innerText.toUpperCase());
+                //         NameStr = NameValue.filter(user => {
+                //             user = user.toUpperCase()
+                //             Index = user.indexOf(inputValue)
+                //         })
+                //         if (Index > -1) {
+                //             Name[i].parentNode.style.display = 'block'
+                //         }
+                //         else {
+                //             Name[i].parentNode.style.display = 'none'
+                //         }
+                //         console.log(NameStr);
+                //     }
+                // }
+            // })
+    </script>
+</body>
+
+</html>

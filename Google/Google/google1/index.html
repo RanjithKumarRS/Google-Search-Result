@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <i></i>
+            <img src="./img/Nutz Logo-01.svg" width="100px" height="100px" alt="" style="margin-left: 10%;">
+            <b>User</b>
+        </div>
+        <div class="search">
+            <input type="text" name="Search" value="" id="Search-id1" onkeyup="myFuntion1()">
+            <i class="fa fa-search"></i>
+        </div>
+    </header>
+    <nav>
+        <img src="./img/Nutz Logo-01.svg" width="100px" height="100px" alt="" style="margin: 0% 5%;">
+        <div class="search">
+            <input type="text" name="Search" value="" id="Search-id" onkeyup="myFuntion()">
+            <i class="fa fa-search"></i>
+        </div>
+        <b style="margin: 0% 5%;">User</b>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <div class="link">
+                <a href="#" style="color:rgb(82, 82, 82); font-size: 13px;">https://ranjithkumar.com </a>
+                <!-- <i class="fa fa-ellipsis-v" aria-hidden="true" style="margin-left: 20px; font-size: 12px;"></i> -->
+            </div>
+            <b class="Name" style="color:black;font-size: 20px; margin-top: 1%;">Google</b>
+            <small style="color: rgb(82, 82, 82);margin-top: 1%;text-align: justify;">Lorem Ipsum is simply dummy text
+                of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                Ipsum.</small>
+        </div>
+
+        <div class=" content">
+            <div class="link">
+                <a href="#" style="color:rgb(82, 82, 82);font-size: 13px;">https://ranjithkumar.com</a>
+                <!-- <i class="fa fa-ellipsis-v" aria-hidden="true" style="margin-left: 20px; font-size: 12px;"></i> -->
+            </div>
+            <b class="Name" style="color:black;font-size: 20px; margin-top: 1%;">cat</b>
+            <small style="color: rgb(82, 82, 82);margin-top: 1%;text-align: justify;">Lorem Ipsum is simply dummy text
+                of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                Ipsum.</small>
+        </div>
+        <div class=" content">
+            <div class="link">
+                <a href="#" style="color:rgb(82, 82, 82);font-size: 13px;">https://ranjithkumar.com</a>
+                <!-- <i class="fa fa-ellipsis-v" aria-hidden="true" style="margin-left: 20px; font-size: 12px;"></i> -->
+            </div>
+            <b class="Name" style="color:black;font-size: 20px; margin-top: 1%;">dog</b>
+            <small style="color: rgb(82, 82, 82);margin-top: 1%;text-align: justify;">Lorem Ipsum is simply dummy text
+                of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                Ipsum.</small>
+        </div>
+        <div class=" content">
+            <div class="link">
+                <a href="#" style="color:rgb(82, 82, 82);font-size: 13px;">https://ranjithkumar.com</a>
+                <!-- <i class="fa fa-ellipsis-v" aria-hidden="true" style="margin-left: 20px; font-size: 12px;"></i> -->
+            </div>
+            <b class="Name" style="color:black;font-size: 20px; margin-top: 1%;">cow</b>
+            <small style="color: rgb(82, 82, 82);margin-top: 1%;text-align: justify;">Lorem Ipsum is simply dummy text
+                of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                Ipsum.</small>
+        </div>
+    </div>
+
+    <script>
+
+        
+        const myFuntion = () => {
+            const Input = document.getElementById('Search-id');
+            const inputValue = Input.value.toUpperCase().trim()
+            const Name = document.getElementsByClassName('Name')
+            let NameValue =[];
+            let NameStr;
+            let Index;
+            for (let i = 0; i < Name.length; i++) {
+                NameValue.push(Name[i].innerText.toUpperCase());
+                // NameStr = NameValue.filter(user => {
+                    user = NameValue[i].toUpperCase()
+                    Index = user.indexOf(inputValue)
+                    
+                // })
+                console.log(Index);
+                if (Index > -1) {
+                    Name[i].parentNode.style.display = 'block'
+                }
+                else {
+                    Name[i].parentNode.style.display = 'none'
+                }
+            }
+        }
+        const myFuntion1 = () => {
+            const Input = document.getElementById('Search-id1');
+            const inputValue = Input.value.toUpperCase().trim()
+            const Name = document.getElementsByClassName('Name')
+            let NameValue = [];
+            let NameStr;
+            let Index;
+            for (let i = 0; i < Name.length; i++) {
+                NameValue.push(Name[i].innerText.toUpperCase());
+                NameStr = NameValue.filter(user => {
+                    user = user.toUpperCase()
+                    Index = user.indexOf(inputValue)
+                })
+                if (Index > -1) {
+                    Name[i].parentNode.style.display = 'block'
+                }
+                else {
+                    Name[i].parentNode.style.display = 'none'
+                }
+                console.log(NameStr);
+            }
+        }
+    </script>
+</body>
+
+</html>
